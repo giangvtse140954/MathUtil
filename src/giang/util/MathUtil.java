@@ -20,7 +20,10 @@ public class MathUtil {
     // do int chỉ tối đa 2 tỷ 1, nên ta xài long thì mới chứa đc n lớn
     // nhưng cũng chỉ cỡ 15! thoai
     public static long computeFactorial(int n) {
-        
+        if (n < 0 || n > 15) {
+            throw new IllegalArgumentException("Invalid argument. n must be >= 0 "
+                    + "and <= 15");
+        }
         long result = 1;
         for (int i = 1; i <= n; i++) {
             result *= i;
